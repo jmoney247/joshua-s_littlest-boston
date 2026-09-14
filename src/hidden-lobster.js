@@ -49,7 +49,7 @@ export function addHiddenLobster( model ) {
     limb( side * 1.8, 7, 3, side * 3.1, 9.4, 3.2, 0.09 );
   }
   for ( const [ name, parts, color, roughness ] of [
-    [ 'bostonHiddenLobsterShell', shellParts, '#ad3626', 0.7 ],
+    [ 'bostonHiddenLobsterShell', shellParts, '#c51c12', 0.7 ],
     [ 'bostonHiddenLobsterEyes', eyeParts, '#171612', 0.4 ]
   ] ) {
     const mesh = new THREE.Mesh( mergeGeometries( parts ), new THREE.MeshStandardMaterial( { color, roughness } ) );

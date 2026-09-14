@@ -9,6 +9,7 @@ import { addHarborAlley } from './harbor-alley.js';
 import { addBostonIronRailing } from './iron-railing.js';
 import { addNeighborhoodSignage } from './neighborhood-signage.js';
 import { addUSMailboxes } from './us-mailboxes.js';
+import { enhancePrudential } from './prudential-lighting.js';
 
 const assetURL = path => new URL( import.meta.env.BASE_URL + path, document.baseURI ).href;
 
@@ -511,7 +512,7 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 						context.drawImage( artwork, ( width - dw ) / 2, ( height - dh ) / 2, dw, dh );
 						texture.needsUpdate = true;
 					};
-					artwork.src = assetURL( 'assets/artwork-ed0febd3e782.png' );
+					artwork.src = assetURL( 'assets/no-yankees.png' );
 				}
 				const material = new THREE.MeshBasicMaterial( { map: texture, toneMapped: false } );
 				material.name = sign.name + 'Material';
@@ -987,7 +988,7 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 		{ enabled: true, phase: 'B', name: 'bostonApplesBoardBack', mesh: 'Object689_metalmat_0', faces: [ 158, 165, 166, 176, 177, 178, 179, 180, 181, 182 ], normal: [ 1, - 1, 0 ], kind: 'apples' },
 		{ enabled: true, phase: 'C', name: 'bostonRightCafeSign', mesh: 'Object649_paintmat_0', faces: [ 6195, 6196, 6210, 6211, 6217, 9387 ], normal: [ 0.921, 0.39, 0 ], kind: 'cafe' },
 		{ enabled: true, phase: 'D', name: 'bostonGoSoxSign', mesh: 'Object649_paintmat_0', faces: Array.from( { length: 61 }, ( _, i ) => 8624 + i ), normal: [ - 1, 1, 0 ], kind: 'baseball' },
-		{ enabled: true, phase: 'E', name: 'bostonCharlesRiverMural', mesh: 'Object649_normal_0', faces: [ 26762, 26763, 26764, 26767, 26768, 26769, 26770 ], normal: [ 0, 1, 0 ], kind: 'river' }
+		{ enabled: true, phase: 'E', name: 'bostonTeaPartyMural', mesh: 'Object649_normal_0', faces: [ 26762, 26763, 26764, 26767, 26768, 26769, 26770 ], normal: [ 0, 1, 0 ], kind: 'teaParty' }
 	];
 
 	for ( const spec of bostonCleanupFaces ) {
@@ -1081,8 +1082,19 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 		}
 		const texture = new THREE.CanvasTexture( canvas );
 		texture.name = spec.name + 'Texture'; texture.colorSpace = THREE.SRGBColorSpace;
+		if ( spec.kind === 'teaParty' ) {
+			ctx.fillStyle = '#ffffff'; ctx.fillRect( 0, 0, w, h );
+			const artwork = createArtwork();
+			artwork.onload = () => {
+				// Keep the whole image in the exposed upper wall, above the bench.
+				const fit = Math.min( w * 0.94 / artwork.naturalWidth, h * 0.65 / artwork.naturalHeight );
+				const dw = artwork.naturalWidth * fit, dh = artwork.naturalHeight * fit;
+				ctx.drawImage( artwork, w * 0.08, h * 0.025, dw, dh ); texture.needsUpdate = true;
+			};
+			artwork.src = assetURL( 'assets/boston-tea-party.png' );
+		}
 		if ( spec.kind === 'bigDig' ) {
-			ctx.fillStyle = '#416355'; ctx.fillRect( 0, 0, w, h );
+			ctx.fillStyle = '#ffffff'; ctx.fillRect( 0, 0, w, h );
 			const artwork = createArtwork();
 			artwork.onload = () => {
 				const fit = Math.min( w / artwork.naturalWidth, h / artwork.naturalHeight );
@@ -1090,7 +1102,7 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 				ctx.drawImage( artwork, ( w - dw ) / 2, ( h - dh ) / 2, dw, dh );
 				texture.needsUpdate = true;
 			};
-			artwork.src = assetURL( 'assets/artwork-0de6536f2873.png' );
+			artwork.src = assetURL( 'assets/big-dig-new.png' );
 		}
 		if ( spec.kind === 'lorettas' ) {
 			ctx.fillStyle = '#ffffff'; ctx.fillRect( 0, 0, w, h );
@@ -1288,22 +1300,14 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 		texture.name = 'bostonPatriotsPosterTexture'; texture.colorSpace = THREE.SRGBColorSpace;
 		const artwork = createArtwork();
 		artwork.onload = () => {
-			// Flatten the supplied image's baked pale checkerboard onto white.
-			const clean = document.createElement( 'canvas' ); clean.width = artwork.naturalWidth; clean.height = artwork.naturalHeight;
-			const cleanCtx = clean.getContext( '2d' ); cleanCtx.drawImage( artwork, 0, 0 );
-			const pixels = cleanCtx.getImageData( 0, 0, clean.width, clean.height );
-			for ( let i = 0; i < pixels.data.length; i += 4 ) {
-				const r = pixels.data[ i ], g = pixels.data[ i + 1 ], b = pixels.data[ i + 2 ];
-				if ( Math.min( r, g, b ) > 220 && Math.max( r, g, b ) - Math.min( r, g, b ) < 12 ) pixels.data[ i ] = pixels.data[ i + 1 ] = pixels.data[ i + 2 ] = 255;
-			}
-			cleanCtx.putImageData( pixels, 0, 0 );
-			const sx = 0, sy = clean.height * 0.265;
-			const sw = clean.width, sh = clean.height * 0.46;
+			ctx.fillStyle = '#081a30'; ctx.fillRect( 0, 0, 1000, 400 );
+			// Remove only navy margins; retain the complete supplied logo.
+			const sx = 0, sy = 45, sw = artwork.naturalWidth, sh = 135;
 			const fit = Math.min( 960 / sw, 376 / sh );
-			ctx.drawImage( clean, sx, sy, sw, sh, ( 1000 - sw * fit ) / 2, ( 400 - sh * fit ) / 2, sw * fit, sh * fit );
+			ctx.drawImage( artwork, sx, sy, sw, sh, ( 1000 - sw * fit ) / 2, ( 400 - sh * fit ) / 2, sw * fit, sh * fit );
 			texture.needsUpdate = true;
 		};
-		artwork.src = assetURL( 'assets/artwork-d26b742cd269.png' );
+		artwork.src = assetURL( 'assets/patriots-navy.png' );
 		const material = new THREE.MeshBasicMaterial( { map: texture, toneMapped: false } );
 		material.name = 'bostonPatriotsPosterMaterial';
 		const poster = new THREE.Mesh( new THREE.PlaneGeometry( 68, 27 ), material );
@@ -1408,7 +1412,7 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 			const w = artwork.naturalWidth * fit, h = artwork.naturalHeight * fit;
 			ctx.drawImage( artwork, ( 512 - w ) / 2, ( 512 - h ) / 2, w, h ); texture.needsUpdate = true;
 		};
-		artwork.src = assetURL( 'assets/artwork-4e09aa6e20eb.png' );
+		artwork.src = assetURL( 'assets/mass-ai.png' );
 		const material = new THREE.MeshBasicMaterial( { map: texture, toneMapped: false } ); material.name = 'bostonLegalSeaFoodsMaterial';
 		const g = legalSource.geometry, p = g.attributes.position;
 		for ( const [ label, direction, faces ] of [
@@ -1780,9 +1784,11 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 			signatureTexture.name = 'bostonJohnHancockSignature';
 			const signatureArtwork = createArtwork();
 			signatureArtwork.onload = () => {
-				const fit = Math.min( 738 / signatureArtwork.naturalWidth, 300 / signatureArtwork.naturalHeight );
-				const width = signatureArtwork.naturalWidth * fit, height = signatureArtwork.naturalHeight * fit;
-				signatureContext.drawImage( signatureArtwork, ( 768 - width ) / 2, ( 320 - height ) / 2, width, height );
+				// Crop only the supplied image's white top/bottom margins, not the signature.
+				const sx = 0, sy = 85, sw = signatureArtwork.naturalWidth, sh = 245;
+				const fit = Math.min( 746 / sw, 300 / sh );
+				const width = sw * fit, height = sh * fit;
+				signatureContext.drawImage( signatureArtwork, sx, sy, sw, sh, ( 768 - width ) / 2, ( 320 - height ) / 2, width, height );
 				signatureTexture.needsUpdate = true;
 			};
 			signatureArtwork.src = assetURL( 'assets/john-hancock-signature.png' );
@@ -1796,7 +1802,7 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 	const lobsterTarget = addHiddenLobster( model );
 	const updateHarborWheel = addHarborAlley( model );
 	addBostonIronRailing( model );
-	addNeighborhoodSignage( model );
+	addNeighborhoodSignage( model, createArtwork(), assetURL( 'assets/boston-cream.png' ) );
 	addUSMailboxes( model );
 
 	mixer = new THREE.AnimationMixer( model );
@@ -1805,6 +1811,27 @@ const gltf = await loader.loadAsync( assetURL( 'models/LittlestTokyo.glb' ), onP
 	
 await Promise.all( assetTasks );
 if ( disposed ) throw new Error( 'Initialization cancelled' );
+// Exchange artwork only; retain both approved sign footprints and transforms.
+const lowerSign = model.getObjectByName( 'bostonWhoopSign' );
+const upperSign = model.getObjectByName( 'bostonPatriotsPoster' );
+if ( lowerSign && upperSign ) {
+  const lowerMap = lowerSign.material.map, upperMap = upperSign.material.map;
+  const fittedMap = ( image, aspect, background, name ) => {
+    const canvas = document.createElement( 'canvas' ); canvas.width = 1024; canvas.height = Math.round( 1024 / aspect );
+    const ctx = canvas.getContext( '2d' ); ctx.fillStyle = background; ctx.fillRect( 0, 0, canvas.width, canvas.height );
+    const fit = Math.min( canvas.width / image.width, canvas.height / image.height );
+    ctx.drawImage( image, ( canvas.width - image.width * fit ) / 2, ( canvas.height - image.height * fit ) / 2, image.width * fit, image.height * fit );
+    const texture = new THREE.CanvasTexture( canvas ); texture.colorSpace = THREE.SRGBColorSpace; texture.name = name; return texture;
+  };
+  lowerSign.material.map = fittedMap( upperMap.image, 738 / 218, '#081a30', 'bostonPatriotsLowerTexture' );
+  upperSign.material.map = fittedMap( lowerMap.image, 68 / 27, '#000000', 'bostonWhoopUpperTexture' );
+  lowerSign.name = 'bostonPatriotsLowerSign'; upperSign.name = 'bostonWhoopUpperSign';
+  upperSign.scale.set( 1.3, 1.3, 1 );
+  // Small normal clearance hides the old raised-outline shell on white artwork.
+  lowerSign.position.y += 0.5;
+  lowerMap.dispose(); upperMap.dispose();
+}
+const updatePrudential = enhancePrudential( model );
 const resize = () => {
   const width = Math.max( container.clientWidth, 1 ), height = Math.max( container.clientHeight, 1 );
   camera.aspect = width / height;
@@ -1819,14 +1846,11 @@ renderer.domElement.addEventListener( 'webglcontextlost', contextLost );
 if ( lobsterTarget ) {
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
+  const lobsterBounds = new THREE.Box3();
+  const projectedCorner = new THREE.Vector3();
+  const lobsterCenter = new THREE.Vector3();
   let press, found = false;
-  const hitLobster = event => {
-    const rect = renderer.domElement.getBoundingClientRect();
-    pointer.set( ( ( event.clientX - rect.left ) / rect.width ) * 2 - 1, - ( ( event.clientY - rect.top ) / rect.height ) * 2 + 1 );
-    raycaster.setFromCamera( pointer, camera );
-    const targetHit = raycaster.intersectObject( lobsterTarget, true )[ 0 ];
-    if ( ! targetHit ) return false;
-    // Do not discover the lobster through a building or another visible object.
+  const visibleLobsterOnRay = () => {
     for ( const hit of raycaster.intersectObjects( scene.children, true ) ) {
       let visible = true;
       for ( let object = hit.object; object; object = object.parent ) if ( ! object.visible ) visible = false;
@@ -1834,6 +1858,38 @@ if ( lobsterTarget ) {
       return hit.object.parent === lobsterTarget;
     }
     return false;
+  };
+  const hitLobster = event => {
+    const rect = renderer.domElement.getBoundingClientRect();
+    pointer.set( ( ( event.clientX - rect.left ) / rect.width ) * 2 - 1, - ( ( event.clientY - rect.top ) / rect.height ) * 2 + 1 );
+    raycaster.setFromCamera( pointer, camera );
+    const targetHit = raycaster.intersectObject( lobsterTarget, true )[ 0 ];
+    if ( targetHit && visibleLobsterOnRay() ) return true;
+    // Forgiving screen-space neighborhood, measured in CSS pixels on all DPRs.
+    // Only pointer events do this work; the animation/render loop is unchanged.
+    lobsterBounds.setFromObject( lobsterTarget );
+    let left = Infinity, top = Infinity, right = -Infinity, bottom = -Infinity;
+    for ( let corner = 0; corner < 8; corner ++ ) {
+      projectedCorner.set(
+        corner & 1 ? lobsterBounds.max.x : lobsterBounds.min.x,
+        corner & 2 ? lobsterBounds.max.y : lobsterBounds.min.y,
+        corner & 4 ? lobsterBounds.max.z : lobsterBounds.min.z
+      ).project( camera );
+      if ( projectedCorner.z < -1 || projectedCorner.z > 1 ) return false;
+      const x = rect.left + ( projectedCorner.x + 1 ) * rect.width / 2;
+      const y = rect.top + ( 1 - projectedCorner.y ) * rect.height / 2;
+      left = Math.min( left, x ); right = Math.max( right, x );
+      top = Math.min( top, y ); bottom = Math.max( bottom, y );
+    }
+    const padding = event.pointerType === 'touch' ? 36 : 24;
+    const dx = Math.max( left - event.clientX, 0, event.clientX - right );
+    const dy = Math.max( top - event.clientY, 0, event.clientY - bottom );
+    if ( dx * dx + dy * dy > padding * padding ) return false;
+    // Nearby pavement counts, but not when the lobster is hidden by a building.
+    lobsterCenter.set( 0, 0, 2 ); lobsterTarget.localToWorld( lobsterCenter ); lobsterCenter.project( camera );
+    if ( Math.abs( lobsterCenter.x ) > 1 || Math.abs( lobsterCenter.y ) > 1 ) return false;
+    pointer.set( lobsterCenter.x, lobsterCenter.y ); raycaster.setFromCamera( pointer, camera );
+    return visibleLobsterOnRay();
   };
   const pointerDown = event => {
     if ( ! event.isPrimary ) { press = undefined; return; }
@@ -1876,6 +1932,7 @@ function animate() {
     const delta = timer.getDelta();
     mixer.update( delta );
     updateHarborWheel( delta );
+    updatePrudential( delta );
     controls.update();
     renderer.render( scene, camera );
   } catch ( error ) { dispose(); onFailure( error ); }

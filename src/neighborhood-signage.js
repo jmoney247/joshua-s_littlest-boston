@@ -5,6 +5,7 @@ import faces from './signage-faces.json';
 // A separate small print sheet is used only by the audited replacement faces.
 // The original atlas, approved artwork, frames and sign locations stay intact.
 const designs = {
+  bostonCream: [ '', 'flower', '#ffffff', '#ffffff', '#ffffff' ],
   wharfSign: [ 'WHARF', 'sail', '#243f51', '#e5c78a', '#b68d52' ],
   northEndBakery: [ 'NORTH END BAKERY', 'coffee', '#e9dfc8', '#384d43', '#b78f51' ],
   harborWalk: [ 'HARBOR|WALK', 'sail', '#345767', '#efe5cc', '#c4a164' ],
@@ -159,7 +160,7 @@ function drawPrint( ctx, width, height, design ) {
   ctx.restore();
 }
 
-export function addNeighborhoodSignage( model ) {
+export function addNeighborhoodSignage( model, creamArtwork, creamURL ) {
   const anchor = model.getObjectByName( 'Object649' );
   if ( ! anchor ) throw new Error( 'Missing neighborhood signage anchor' );
   model.updateWorldMatrix( true, true );
@@ -245,6 +246,16 @@ export function addNeighborhoodSignage( model ) {
   }
   const texture = new THREE.CanvasTexture( canvas ); texture.colorSpace = THREE.SRGBColorSpace;
   texture.name = 'bostonNeighborhoodPrintSheet';
+  if ( creamArtwork ) {
+    creamArtwork.onload = () => {
+      const tile = tiles.get( 'bostonCream:poster' );
+      if ( ! tile ) throw new Error( 'Missing Boston cream sign face' );
+      const x = tile.x * 1024, y = ( 1 - tile.y - tile.h ) * 1024;
+      ctx.fillStyle = '#ffffff'; ctx.fillRect( x - 4, y - 4, 128, 128 );
+      ctx.drawImage( creamArtwork, x, y, 120, 120 ); texture.needsUpdate = true;
+    };
+    creamArtwork.src = creamURL;
+  }
   const material = new THREE.MeshBasicMaterial( { map: texture, toneMapped: false } ); material.name = 'bostonNeighborhoodPrints';
   const group = new THREE.Group(); group.name = 'bostonNeighborhoodSignage';
   const mesh = new THREE.Mesh( mergeGeometries( geometries ), material ); mesh.name = 'bostonNeighborhoodPrintedFaces';
