@@ -1,0 +1,102 @@
+{
+  "sourceHtmlSha256": "e112e35e80c1956459b5adf8b1d2a25817738f71135191a3e4feb48e1f386129",
+  "sourceGlbSha256": "8375c2aa6808e28ad1cb9c0d43e1513f57ffd7865244bf66bbbd5bb0e907e06d",
+  "loadingPoster": {
+    "file": "assets/boston-loading.webp",
+    "bytes": 841488,
+    "sha256": "7fa882f3e7f54fa62f8c06e405d74d6740243f37282aa8833b389036171ce885",
+    "encoding": "lossless WebP, identical decoded RGB pixels to supplied PNG"
+  },
+  "artwork": [
+    {
+      "file": "assets/artwork-ed0febd3e782.png",
+      "bytes": 19412,
+      "sha256": "ed0febd3e782610e2a47b7b2faede5cabd7c177b3117c736ba47e0317d03c8cd"
+    },
+    {
+      "file": "assets/artwork-01cdcc20cf8b.png",
+      "bytes": 15509,
+      "sha256": "01cdcc20cf8b9acc35250b9e37b4014feaeaa0c47cadf5f9a1d5e9a4ebec9c0e"
+    },
+    {
+      "file": "assets/artwork-a9be4f133fe8.png",
+      "bytes": 3870199,
+      "sha256": "a9be4f133fe8eb9d3103c17aa2cdaf6d35ecfccc3ab56302c0f9f2393d153770"
+    },
+    {
+      "file": "assets/artwork-19568f3438a5.png",
+      "bytes": 48742,
+      "sha256": "19568f3438a5dbdf84847856d98a01dc8927355e46456bd5410efa622225a41b"
+    },
+    {
+      "file": "assets/artwork-4906f15ce859.png",
+      "bytes": 125665,
+      "sha256": "4906f15ce8590e6e850ef5197d41444eb9c48a38396e8f8a5fba0848d226c5d6"
+    },
+    {
+      "file": "assets/artwork-56d6324b4812.png",
+      "bytes": 222284,
+      "sha256": "56d6324b48125469120a8df59d80f1cbfef3a17e2085f146d35a09bd40504a0f"
+    },
+    {
+      "file": "assets/artwork-bdee915d8a77.png",
+      "bytes": 65780,
+      "sha256": "bdee915d8a776a52cb3b6fab686484a330c59ef5044db944b57f9c460f06b7f4"
+    },
+    {
+      "file": "assets/artwork-0de6536f2873.png",
+      "bytes": 1344279,
+      "sha256": "0de6536f2873cd8af8e272b2fd7697545b36afe10f8ed6df199ef480e4cee710"
+    },
+    {
+      "file": "assets/artwork-319f11405636.png",
+      "bytes": 30998,
+      "sha256": "319f114056364e8e4e4d92c9a0e1fedbb2b47ac5dd529fac70017e77fe1b8f68"
+    },
+    {
+      "file": "assets/artwork-6cd351f34d72.png",
+      "bytes": 1369315,
+      "sha256": "6cd351f34d726736bbf23df892a4ceb5a1f6b392294145d0d9d38b464c6c09be"
+    },
+    {
+      "file": "assets/artwork-22ecf561c357.png",
+      "bytes": 41427,
+      "sha256": "22ecf561c35750a143730972a540a1e15a35b639dce6b1c29185f18f734d4bdf"
+    },
+    {
+      "file": "assets/artwork-f743035b106b.png",
+      "bytes": 450305,
+      "sha256": "f743035b106b0ab6e7dfd5af4f154b0f0842a5da8670f66c0f3cdbe6bae3fb92"
+    },
+    {
+      "file": "assets/artwork-004774fddcca.png",
+      "bytes": 6642,
+      "sha256": "004774fddcca649e4a619b7356a484ed488c13fc195afed4bbf0554a20246d0a"
+    },
+    {
+      "file": "assets/artwork-d26b742cd269.png",
+      "bytes": 37784,
+      "sha256": "d26b742cd2697a14b83f5e342a7b2d4eef0fb5e05a1e72f9a3228780ddfddc78"
+    },
+    {
+      "file": "assets/artwork-c3fcf9413eaa.png",
+      "bytes": 35125,
+      "sha256": "c3fcf9413eaa4fd5ebaf81170cd18f85a89b84ffb7c9638613819d46c1631d59"
+    },
+    {
+      "file": "assets/artwork-4e09aa6e20eb.png",
+      "bytes": 121179,
+      "sha256": "4e09aa6e20eba438bc37aeb15afd35435829dae4fb3efdfe2218526d249df4bd"
+    }
+  ],
+  "runtimeFiles": [
+    "build/three.module.js",
+    "examples/jsm/controls/OrbitControls.js",
+    "examples/jsm/objects/Sky.js",
+    "examples/jsm/loaders/GLTFLoader.js",
+    "examples/jsm/loaders/DRACOLoader.js",
+    "build/three.core.js",
+    "examples/jsm/utils/BufferGeometryUtils.js",
+    "examples/jsm/utils/SkeletonUtils.js"
+  ]
+}

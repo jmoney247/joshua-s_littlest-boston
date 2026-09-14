@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#7795a7">
+    <meta name="description" content="Joshua’s Littlest Boston — an interactive miniature Boston in WebGL.">
+    <meta property="og:title" content="Joshua’s Littlest Boston">
+    <meta property="og:description" content="Explore an animated miniature Boston.">
+    <meta property="og:image" content="./assets/boston-loading.webp">
+    <title>Joshua’s Littlest Boston</title>
+    <link rel="icon" href="data:,">
+    <link rel="preload" href="./assets/boston-loading.webp" as="image" fetchpriority="high">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body data-state="loading">
+    <main id="experience" aria-label="Joshua’s Littlest Boston">
+      <div id="container" aria-label="Interactive Boston scene" aria-busy="true"></div>
+      <div id="info">
+        Joshua’s Littlest Boston
+        <span class="subtitle">in WebGL</span>
+        <span class="exploration-hint">Drag to explore · Click the hidden lobster 🦞</span>
+      </div>
+      <div id="secret-teaser">Found the Secret Base yet?</div>
+      <aside id="discovery-toast" role="status" aria-live="polite" aria-hidden="true">
+        <button id="dismiss-discovery" type="button" aria-label="Dismiss message">×</button>
+        <strong>You found the lobster!</strong>
+        <span>But did you find the Secret Base yet?</span>
+      </aside>
+      <section id="loading-screen" aria-label="City loading status">
+        <img class="poster" src="./assets/boston-loading.webp" alt="A miniature Boston skyline on a WHOOP device" fetchpriority="high" decoding="sync">
+        <div class="loading-card">
+          <h1>Joshua’s Littlest Boston</h1>
+          <p id="status" role="status" aria-live="polite">Loading the city…</p>
+          <div id="activity" class="spinner" aria-hidden="true"></div>
+          <button id="retry" type="button" hidden>Try again</button>
+          <noscript><p>Interactive 3D couldn’t load. Enable JavaScript and reload to explore.</p></noscript>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

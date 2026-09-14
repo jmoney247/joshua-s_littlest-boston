@@ -1,0 +1,31 @@
+:root { font-family: Arial, sans-serif; color: #183c36; background: #7795a7; }
+* { box-sizing: border-box; }
+html, body, #experience, #container { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { overscroll-behavior: none; background: #e2e0e0; }
+#experience { position: relative; isolation: isolate; }
+#container { position: absolute; inset: 0; }
+canvas { display: block; max-width: 100%; max-height: 100%; touch-action: none; }
+#info { position: absolute; z-index: 1; left: 50%; top: 12px; width: auto; padding: 7px 14px; transform: translateX(-50%); border: 1px solid rgba(24,60,54,.1); border-radius: 5px; background: rgba(246,243,233,.8); box-shadow: 0 1px 5px rgba(24,60,54,.05); color: #183c36; font: 600 14px/1.25 Arial,sans-serif; text-align: center; letter-spacing: .02em; white-space: nowrap; pointer-events: none; user-select: none; }
+#info .subtitle { display: block; margin-top: 2px; color: rgba(24,60,54,.62); font-size: 10px; font-weight: 400; letter-spacing: .01em; }
+#info .exploration-hint { display: block; margin-top: 4px; color: rgba(24,60,54,.76); font-size: 10px; font-weight: 500; letter-spacing: .01em; }
+#secret-teaser { position: absolute; z-index: 1; right: max(14px, env(safe-area-inset-right)); bottom: max(9px, env(safe-area-inset-bottom)); color: rgba(18,63,52,.8); font: 500 10px/1.2 Arial,sans-serif; letter-spacing: .025em; text-shadow: 0 1px 2px rgba(245,244,233,.75); pointer-events: none; user-select: none; }
+#discovery-toast { position: absolute; z-index: 3; left: 50%; bottom: max(34px, calc(env(safe-area-inset-bottom) + 24px)); width: max-content; max-width: calc(100% - 32px); padding: 13px 38px 13px 18px; border: 1px solid rgba(255,255,255,.24); border-radius: 7px; background: rgba(20,48,42,.92); box-shadow: 0 5px 22px rgba(10,28,25,.2); color: #fbfaf2; font: 400 11px/1.35 Arial,sans-serif; text-align: left; opacity: 0; visibility: hidden; transform: translate(-50%,8px); transition: opacity .22s ease, transform .22s ease, visibility 0s .22s; pointer-events: none; }
+#discovery-toast.is-visible { opacity: 1; visibility: visible; transform: translate(-50%,0); transition: opacity .22s ease, transform .22s ease, visibility 0s; pointer-events: auto; }
+#discovery-toast strong, #discovery-toast span { display: block; }
+#discovery-toast strong { font-size: 13px; }
+#discovery-toast span { margin-top: 3px; color: rgba(251,250,242,.75); }
+#dismiss-discovery { position: absolute; top: 2px; right: 5px; width: 28px; height: 28px; margin: 0; padding: 0; border: 0; background: transparent; color: rgba(255,255,255,.74); font: 400 19px/28px Arial,sans-serif; cursor: pointer; }
+#dismiss-discovery:hover { color: white; }
+#loading-screen { position: absolute; inset: 0; z-index: 2; background: #7795a7; opacity: 1; visibility: visible; transition: opacity .55s ease, visibility 0s; }
+.poster { width: 100%; height: 100%; display: block; object-fit: contain; }
+.loading-card { position: absolute; bottom: max(24px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 32px); padding: 14px 22px; border: 1px solid rgba(255,255,255,.35); border-radius: 8px; color: #f9fcff; background: rgba(20,39,51,.85); box-shadow: 0 3px 20px #14273322; text-align: center; }
+.loading-card h1 { margin: 0; font-size: clamp(14px, 2vw, 18px); font-weight: 600; }
+.loading-card p { margin: 7px 0 0; font-size: 12px; line-height: 1.5; }
+.spinner { width: 16px; height: 16px; margin: 10px auto 0; border: 2px solid #ffffff40; border-top-color: white; border-radius: 50%; animation: spin .85s linear infinite; }
+button { margin-top: 12px; padding: 7px 14px; border: 1px solid #ffffff88; border-radius: 4px; background: #f5f9fc; color: #203c4b; font: 600 12px Arial,sans-serif; cursor: pointer; }
+button:focus-visible { outline: 3px solid #e7c974; outline-offset: 4px; }
+[hidden] { display: none !important; }
+body[data-state="ready"] #loading-screen { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .55s ease, visibility 0s .55s; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 480px) { .loading-card { bottom: max(18px, env(safe-area-inset-bottom)); padding: 12px 16px; } #info { top: 8px; max-width: calc(100% - 20px); padding: 6px 10px; white-space: normal; } #info .exploration-hint { font-size: 10px; white-space: nowrap; } #secret-teaser { right: max(10px, env(safe-area-inset-right)); bottom: max(7px, env(safe-area-inset-bottom)); font-size: 9px; } #discovery-toast { bottom: max(29px, calc(env(safe-area-inset-bottom) + 21px)); } }
+@media (prefers-reduced-motion: reduce) { #loading-screen, #discovery-toast { transition: none !important; } .spinner { animation-duration: 2s; } }

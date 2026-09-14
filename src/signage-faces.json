@@ -1,0 +1,975 @@
+[
+  { "id": "alleyWharfReliefReplacement", "mesh": "Object649_normal_0", "faces": [22813,22814], "kind": "wharfSign" },
+  { "id": "alleyNorthEndBakery", "mesh": "Object649_paintmat_0", "faces": [5642,5643], "kind": "northEndBakery" },
+  { "id": "alleyHarborWalkRoundel", "mesh": "Object649_paintmat_0", "faces": [3872,3873,3879,3880,3881,3887,3888,3889,3895,3896,3898,3899,3900,3901,3902,3903,3904,3905,3910,3914,3915,3916,3920,3921,3922,3926,3927,3928,3932,3940,3941,3942,3943,3944,3945,9417], "kind": "harborWalk" },
+  { "id": "postalCollectionNotice", "mesh": "Object649_Plastic_Soft_0", "faces": [15778,15779,15780,15781,15782,15783,15784,15785,15786,15787,15788,15789,15790,15791,15792,15793,15794,15795,15796,15797,15798,16792], "kind": "collectionNotice" },
+  { "id": "streetServiceNotice", "mesh": "Object649_paintmat_0", "faces": [7850,7851,7852,7853,7854,7855,7856,7857], "kind": "utilityNotice" },
+  {
+    "id": "harborFlags_22821",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      22821,
+      22822,
+      22829,
+      22830,
+      22837,
+      22838
+    ],
+    "kind": "whiteAlley",
+    "reverse": true
+  },
+  {
+    "id": "harborFlags_22873",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      22873,
+      22874,
+      22881,
+      22882,
+      22889,
+      22890
+    ],
+    "kind": "harborFlags",
+    "reverse": true
+  },
+  {
+    "id": "harborFlags_22925",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      22925,
+      22926,
+      22933,
+      22934,
+      22941,
+      22942
+    ],
+    "kind": "blueAlley",
+    "reverse": true
+  },
+  {
+    "id": "mangaPoster_21477",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      21477,
+      21478,
+      21479,
+      21480
+    ],
+    "kind": "mangaPoster"
+  },
+  {
+    "id": "bubbleMural_8991",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      8991,
+      8992,
+      8993,
+      8994,
+      8995,
+      8996,
+      8997,
+      8998,
+      8999,
+      9000,
+      9001,
+      9002,
+      9003,
+      9004,
+      9005
+    ],
+    "kind": "bubbleMural"
+  },
+  {
+    "id": "bubbleDoor_8688",
+    "mesh": "Object649_paintmat_0",
+    "faces": [
+      8693,
+      8694
+    ],
+    "kind": "bubbleDoor"
+  },
+  {
+    "id": "bubbleHeader_3548",
+    "mesh": "Object649_Plastic_Soft_0",
+    "faces": [
+      3548,
+      3549
+    ],
+    "kind": "bubbleHeader"
+  },
+  {
+    "id": "alleyHeader_15906",
+    "mesh": "Object649_Plastic_Soft_0",
+    "faces": [
+      15906,
+      15907,
+      15908,
+      15909
+    ],
+    "kind": "alleyHeader"
+  },
+  {
+    "id": "alleyCurtain_17083",
+    "mesh": "Object649_metalmat_0",
+    "faces": [
+      17083,
+      17084,
+      17085,
+      17086
+    ],
+    "kind": "alleyCurtain"
+  },
+  {
+    "id": "alleyCurtain_17087",
+    "mesh": "Object649_metalmat_0",
+    "faces": [
+      17087,
+      17088,
+      17089,
+      17090
+    ],
+    "kind": "alleyCurtain"
+  },
+  {
+    "id": "whiteVertical_23796",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      23796,
+      23797,
+      23798,
+      23799,
+      23800,
+      23801,
+      23802,
+      23803,
+      23804,
+      23805,
+      23806,
+      23807,
+      23808,
+      23809,
+      23810,
+      23811,
+      23812,
+      23813,
+      23814,
+      23815,
+      23816,
+      23817,
+      23818,
+      23819,
+      23820,
+      23821,
+      23822,
+      29136
+    ],
+    "kind": "whiteVertical"
+  },
+  {
+    "id": "tinyEaves_23718",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      23718,
+      23719,
+      23720,
+      23721,
+      23722,
+      23723,
+      23724,
+      23725,
+      23726,
+      23727,
+      29137
+    ],
+    "kind": "tinyEaves"
+  },
+  {
+    "id": "tinyEaves_24406",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      24406,
+      24407,
+      24408,
+      24409,
+      24410,
+      24411,
+      24412,
+      24413,
+      24414,
+      24415,
+      29124
+    ],
+    "kind": "tinyEaves"
+  },
+  {
+    "id": "blueAlley_48",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "kind": "blueAlley"
+  },
+  {
+    "id": "blueAlley_8971",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      8971,
+      8972,
+      8973,
+      8974,
+      8975,
+      8976,
+      8977
+    ],
+    "kind": "blueAlley"
+  },
+  {
+    "id": "blueAlley_8980",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      8980,
+      8981,
+      8982,
+      8983,
+      8984,
+      8985,
+      8986
+    ],
+    "kind": "blueAlley"
+  },
+  {
+    "id": "whiteAlley_8978",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      8978,
+      8979
+    ],
+    "kind": "whiteAlley"
+  },
+  {
+    "id": "whiteAlley_18379",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      18379,
+      18380
+    ],
+    "kind": "whiteAlley"
+  },
+  {
+    "id": "greenAlley_23977",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      23977,
+      23978,
+      23979,
+      23980,
+      23981,
+      23982
+    ],
+    "kind": "greenAlley"
+  },
+  {
+    "id": "orangeAlley_25322",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      25322,
+      25324,
+      25325,
+      25326,
+      25327,
+      25328,
+      25329,
+      25330,
+      25331,
+      25332,
+      25333,
+      25334,
+      25335,
+      25336,
+      25342,
+      25343,
+      25344,
+      25345,
+      25346,
+      25347
+    ],
+    "kind": "orangeAlley"
+  },
+  {
+    "id": "orangeAlley_25339",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      25339,
+      25350,
+      25351
+    ],
+    "kind": "orangeAlley"
+  },
+  {
+    "id": "pinkNotice_742",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      742,
+      743
+    ],
+    "kind": "pinkNotice"
+  },
+  {
+    "id": "pinkNotice_5527",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      5527,
+      5528
+    ],
+    "kind": "pinkNotice"
+  },
+  {
+    "id": "bikeCaption_324",
+    "mesh": "Object649_paintmat_0",
+    "faces": [
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333
+    ],
+    "kind": "bikeCaption"
+  },
+  {
+    "id": "bikeCaption_4067",
+    "mesh": "Object649_paintmat_0",
+    "faces": [
+      4067,
+      4068,
+      4069,
+      4070,
+      4071,
+      4072,
+      4073,
+      4074,
+      4075,
+      4076
+    ],
+    "kind": "bikeCaption"
+  },
+  {
+    "id": "chalkMenu_246",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      246,
+      247
+    ],
+    "kind": "chalkMenu"
+  },
+  {
+    "id": "chalkMenu_266",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      266,
+      267
+    ],
+    "kind": "chalkMenu"
+  },
+  {
+    "id": "chalkMenu_268",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      268,
+      269
+    ],
+    "kind": "chalkMenu"
+  },
+  {
+    "id": "chalkMenu_270",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      270,
+      271
+    ],
+    "kind": "chalkMenu"
+  },
+  {
+    "id": "chalkMenu_272",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      272,
+      273
+    ],
+    "kind": "chalkMenu"
+  },
+  {
+    "id": "chalkMenu_274",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      274,
+      275,
+      276
+    ],
+    "kind": "chalkMenu"
+  },
+  {
+    "id": "vendingPoster_31",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      31,
+      32,
+      38,
+      39,
+      40,
+      318
+    ],
+    "kind": "vendingPoster"
+  },
+  {
+    "id": "vendingPoster_113",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      113,
+      114,
+      120,
+      121,
+      122,
+      316
+    ],
+    "kind": "vendingPoster"
+  },
+  {
+    "id": "vendingPoster_195",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      195,
+      196,
+      202,
+      203,
+      204,
+      314
+    ],
+    "kind": "vendingPoster"
+  },
+  {
+    "id": "seafoodBanner0",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265
+    ],
+    "kind": "seafoodBanner0"
+  },
+  {
+    "id": "seafoodBanner1",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294
+    ],
+    "kind": "seafoodBanner1"
+  },
+  {
+    "id": "seafoodBanner2",
+    "mesh": "Object649_alpha_glass_0",
+    "faces": [
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312
+    ],
+    "kind": "seafoodBanner2"
+  },
+  {
+    "id": "harborSeafoodPlaque",
+    "mesh": "Object649_metalmat_0",
+    "faces": [
+      3576,
+      3577,
+      3578,
+      3579,
+      3580,
+      3581,
+      3582,
+      3583,
+      3584,
+      17312
+    ],
+    "kind": "seafoodBanner2",
+    "offset": 0.45
+  },
+  {
+    "id": "floristRoofBadge",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      25354,
+      25355,
+      25356,
+      25357,
+      25358,
+      25359,
+      25360,
+      25361,
+      25362,
+      25363,
+      25364,
+      25365,
+      25366,
+      25367,
+      25368,
+      25369,
+      25370,
+      25371,
+      25372,
+      25373,
+      25374,
+      25375,
+      25376,
+      25377,
+      25378,
+      25379,
+      25380,
+      25381,
+      25382,
+      25383,
+      25384,
+      25385,
+      25386,
+      25387,
+      25388,
+      25389,
+      25390,
+      25391,
+      25392,
+      25393,
+      25394,
+      25395,
+      25396,
+      25397,
+      25398,
+      25399,
+      25400,
+      25401,
+      25402,
+      25403,
+      25404,
+      25405,
+      25406,
+      25407,
+      25408,
+      25409,
+      25410,
+      25411,
+      25412,
+      29112
+    ],
+    "kind": "orangeAlley"
+  },
+  {
+    "id": "bookshopBotanicalPoster",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      18090,
+      18091
+    ],
+    "kind": "pinkNotice"
+  },
+  {
+    "id": "bookshopRecordCover",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      22585,
+      22586,
+      22587,
+      22588,
+      22589,
+      22590,
+      22591,
+      22592,
+      22593,
+      22594,
+      22595,
+      22596,
+      22597,
+      22598,
+      22599,
+      22600,
+      22601,
+      22602,
+      22603,
+      22604,
+      22605,
+      29149
+    ],
+    "kind": "recordCover"
+  },
+  {
+    "id": "bikeNoticeFront",
+    "mesh": "Object649_paintmat_0",
+    "faces": [
+      4077,
+      4078,
+      4079,
+      4080,
+      4081,
+      4082,
+      4083,
+      4084,
+      4085,
+      4086
+    ],
+    "kind": "bikeNotice"
+  },
+  {
+    "id": "finalPoster_18066",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      18066,
+      18067
+    ],
+    "kind": "lighthousePoster"
+  },
+  {
+    "id": "finalPoster_23823",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      23823,
+      23824
+    ],
+    "kind": "floristPoster"
+  },
+  {
+    "id": "finalPoster_18092",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      18092,
+      18093
+    ],
+    "kind": "floristPoster"
+  },
+  {
+    "id": "finalPoster_29148",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      22606,
+      22607,
+      22608,
+      22609,
+      22610,
+      22611,
+      22612,
+      22613,
+      22614,
+      22615,
+      22616,
+      22617,
+      22618,
+      22619,
+      22620,
+      22621,
+      22622,
+      22623,
+      22624,
+      22625,
+      22626,
+      22627,
+      22628,
+      22629,
+      22630,
+      22631,
+      22632,
+      22633,
+      22634,
+      22635,
+      22636,
+      22637,
+      22638,
+      22639,
+      22640,
+      22641,
+      22642,
+      22643,
+      22644,
+      22645,
+      22646,
+      22647,
+      22648,
+      22649,
+      22650,
+      22651,
+      22652,
+      22653,
+      22654,
+      22655,
+      22656,
+      22657,
+      22658,
+      22659,
+      22660,
+      22661,
+      22662,
+      22663,
+      22664,
+      22665,
+      22666,
+      22667,
+      22668,
+      22669,
+      22670,
+      22671,
+      22672,
+      22673,
+      22674,
+      29148
+    ],
+    "kind": "designPoster"
+  },
+  {
+    "id": "finalPoster_22812",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      22744,
+      22745,
+      22746,
+      22747,
+      22748,
+      22749,
+      22750,
+      22751,
+      22752,
+      22753,
+      22754,
+      22755,
+      22756,
+      22757,
+      22758,
+      22759,
+      22760,
+      22761,
+      22762,
+      22763,
+      22764,
+      22765,
+      22766,
+      22767,
+      22768,
+      22769,
+      22770,
+      22771,
+      22772,
+      22773,
+      22774,
+      22775,
+      22776,
+      22777,
+      22778,
+      22779,
+      22780,
+      22781,
+      22782,
+      22783,
+      22784,
+      22785,
+      22786,
+      22787,
+      22788,
+      22789,
+      22790,
+      22791,
+      22792,
+      22793,
+      22794,
+      22795,
+      22796,
+      22797,
+      22798,
+      22799,
+      22800,
+      22801,
+      22802,
+      22803,
+      22804,
+      22805,
+      22806,
+      22807,
+      22808,
+      22809,
+      22810,
+      22811,
+      22812,
+      29146
+    ],
+    "kind": "mangaPoster"
+  },
+  {
+    "id": "finalPoster_29189",
+    "mesh": "Object649_normal_0",
+    "faces": [
+      21311,
+      21312,
+      21313,
+      21314,
+      21315,
+      21316,
+      21317,
+      21318,
+      21319,
+      21320,
+      21321,
+      21322,
+      21323,
+      21324,
+      21325,
+      21326,
+      21327,
+      21328,
+      21329,
+      21330,
+      21331,
+      21332,
+      21333,
+      21334,
+      21335,
+      21336,
+      21337,
+      21338,
+      21339,
+      21340,
+      21341,
+      21342,
+      21343,
+      21344,
+      21345,
+      21346,
+      21347,
+      29189
+    ],
+    "kind": "chalkMenu"
+  },
+  {
+    "id": "finalPoster_337",
+    "mesh": "Object649_paintmat_0",
+    "faces": [
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343
+    ],
+    "kind": "bikeNotice"
+  },
+  {
+    "id": "coffeeSidePlaque",
+    "mesh": "Object649_paintmat_0",
+    "faces": [
+      5035,
+      5036,
+      5037,
+      5038,
+      5039,
+      5040,
+      5041,
+      5042,
+      5043,
+      5044,
+      5045,
+      5046,
+      5047,
+      5048,
+      5049,
+      5050,
+      5051,
+      5052,
+      5053,
+      5054,
+      5055,
+      5056,
+      5057,
+      5058,
+      5059,
+      5060,
+      5061,
+      5062,
+      5063,
+      5064,
+      5065,
+      5066,
+      5067,
+      5068,
+      5069,
+      5070,
+      5071,
+      5072,
+      5073,
+      5074,
+      5075,
+      5076,
+      5077,
+      9413
+    ],
+    "kind": "alleyHeader"
+  },
+  {
+    "id": "priceCardGraphic",
+    "mesh": "Object649_normal_0",
+    "faces": [ 23847, 23848 ],
+    "kind": "vendingPoster"
+  }
+]
